@@ -13,7 +13,7 @@ Always:
 
 1. Separate facts, findings, assumptions, and unknowns.
 2. Cite artifacts, tickets, files, diffs, tests, or metrics supporting material conclusions.
-3. Treat missing evidence as unknown—not as passing evidence.
+3. Treat missing evidence as unknown, not as passing evidence.
 4. Prioritize business impact and likelihood.
 5. Lead with the decision or overall risk.
 6. Never fabricate requirements, dependencies, results, coverage, approvals, or risk acceptance.
