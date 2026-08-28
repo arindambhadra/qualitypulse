@@ -1,12 +1,12 @@
-# QualityPulse — AI Quality Engineering Lead
+# QualityPulse: AI Quality Engineering Lead
 
 Turn software evidence into confident quality decisions.
 
 QualityPulse is a free, evidence-based Quality Engineering plugin for Cursor. It adds one coordinating QA Lead agent and three specialized skills:
 
-- **Requirement Risk Reviewer** — finds ambiguity, missing acceptance criteria, testability gaps, and material delivery risks before development.
-- **Regression Impact Analyzer** — traces credible change impact and recommends the smallest defensible regression scope.
-- **Release Readiness Advisor** — evaluates test, defect, coverage, UAT, operational, and non-functional evidence to recommend GO, CONDITIONAL GO, or NO-GO.
+- **Requirement Risk Reviewer**: finds ambiguity, missing acceptance criteria, testability gaps, and material delivery risks before development.
+- **Regression Impact Analyzer**: traces credible change impact and recommends the smallest defensible regression scope.
+- **Release Readiness Advisor**: evaluates test, defect, coverage, UAT, operational, and non-functional evidence to recommend GO, CONDITIONAL GO, or NO-GO.
 
 ## Example requests
 
