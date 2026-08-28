@@ -1,0 +1,22 @@
+{
+  "name": "qualitypulse-qa-lead",
+  "version": "0.1.0",
+  "description": "Turn software evidence into confident quality decisions with risk-based QA workflows.",
+  "author": {
+    "name": "Arindam Bhadra"
+  },
+  "license": "MIT",
+  "keywords": [
+    "quality-engineering",
+    "qa",
+    "testing",
+    "regression",
+    "release-readiness",
+    "risk-based-testing"
+  ],
+  "logo": "assets/qualitypulse-logo.svg",
+  "agents": "agents/",
+  "skills": "skills/",
+  "repository": "https://github.com/arindambhadra/qualitypulse",
+  "homepage": "https://github.com/arindambhadra/qualitypulse"
+}
