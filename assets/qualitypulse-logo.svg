@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">QualityPulse</title>
+  <desc id="desc">Blue shield with a quality check and signal nodes</desc>
+  <defs>
+    <linearGradient id="g" x1="64" y1="48" x2="448" y2="464" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#0F766E"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#g)" d="M256 24 440 92v132c0 119-72 218-184 264C144 442 72 343 72 224V92L256 24Z"/>
+  <path fill="none" stroke="#FFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="42" d="m151 258 67 67 145-153"/>
+  <circle cx="151" cy="154" r="18" fill="#BFDBFE"/>
+  <circle cx="256" cy="126" r="18" fill="#99F6E4"/>
+  <circle cx="361" cy="154" r="18" fill="#BFDBFE"/>
+</svg>
