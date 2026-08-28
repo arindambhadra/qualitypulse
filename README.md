@@ -15,7 +15,7 @@ Use the QualityPulse QA Lead to review this Jira story before refinement.
 
 Analyze the current Git diff and recommend a prioritized regression scope.
 
-Based on these test results and open defects, is release 19.1 ready for production?
+Based on these test results and open defects, is release 2.0 ready for production?
 ```
 
 ## Design principles
