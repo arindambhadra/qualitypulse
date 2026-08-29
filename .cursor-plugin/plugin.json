@@ -1,7 +1,7 @@
 {
   "name": "qualitypulse-qa-lead",
-  "version": "0.3.0",
-  "description": "Score requirement and regression risk, scale test coverage, and calculate weighted release readiness with evidence-based GO, CONDITIONAL GO, or NO-GO decisions.",
+  "version": "1.0.0",
+  "description": "AI QA leadership toolkit that turns requirements, code changes, and release evidence into scored risks, focused test priorities, and defensible GO, CONDITIONAL GO, or NO-GO decisions.",
   "author": {
     "name": "Arindam Bhadra"
   },
@@ -14,7 +14,9 @@
     "release-readiness",
     "risk-based-testing",
     "requirements-review",
-    "test-strategy"
+    "test-strategy",
+    "qa-leadership",
+    "quality-management"
   ],
   "logo": "assets/qualitypulse-logo.svg",
   "agents": "agents/",
