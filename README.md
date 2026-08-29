@@ -1,24 +1,142 @@
 # QualityPulse: AI Quality Engineering Lead
 
-Turn software evidence into confident quality decisions.
+Turn requirements, code changes, and release evidence into measurable quality decisions.
 
-QualityPulse is a free, evidence-based Quality Engineering plugin for Cursor. It adds one coordinating QA Lead agent and three specialized skills:
+QualityPulse is a free Quality Engineering plugin for Cursor. It helps engineering and QA teams find requirement gaps, focus regression testing on credible impact, and make evidence-based release decisions. Every material risk is scored using impact multiplied by likelihood. Release assessments include a weighted readiness score out of 100 plus hard-stop gates that prevent critical blockers from being hidden by a high total.
 
-- **Requirement Risk Reviewer**: finds ambiguity, missing acceptance criteria, testability gaps, and material delivery risks before development.
-- **Regression Impact Analyzer**: traces credible change impact and recommends the smallest defensible regression scope.
-- **Release Readiness Advisor**: evaluates test, defect, coverage, UAT, operational, and non-functional evidence to recommend GO, CONDITIONAL GO, or NO-GO.
+## Included capabilities
 
-Version 0.2.0 adds impact-by-likelihood risk scores, risk-based test-depth recommendations, and a weighted release-readiness score out of 100 with hard-stop gates.
+- **QualityPulse QA Lead**: routes a request to the right workflow and produces a concise quality recommendation.
+- **Requirement Risk Reviewer**: identifies ambiguity, missing acceptance criteria, testability gaps, and material delivery risks before development.
+- **Regression Impact Analyzer**: traces code and dependency impact, scores regression risk, and recommends the smallest defensible test scope.
+- **Release Readiness Advisor**: evaluates functional, integration, regression, defect, security, performance, UAT, deployment, monitoring, and rollback evidence to recommend GO, CONDITIONAL GO, or NO-GO.
 
-## Example requests
+## Installation
+
+### Install from the Cursor Marketplace
+
+After QualityPulse is approved and listed:
+
+1. Open **Customize** in Cursor.
+2. Search for **QualityPulse**.
+3. Select **Install**.
+4. Choose user scope to use it across projects or project scope for one workspace.
+
+### Install locally on Windows
+
+Open a PowerShell terminal in Cursor and run:
+
+```powershell
+New-Item -ItemType Directory -Force "$HOME\.cursor\plugins\local"
+git clone https://github.com/arindambhadra/qualitypulse.git "$HOME\.cursor\plugins\local\qualitypulse"
+```
+
+Then press `Ctrl+Shift+P` and run `Developer: Reload Window`.
+
+### Install locally on macOS or Linux
+
+```bash
+mkdir -p ~/.cursor/plugins/local
+git clone https://github.com/arindambhadra/qualitypulse.git ~/.cursor/plugins/local/qualitypulse
+```
+
+Then reload Cursor using `Developer: Reload Window`.
+
+### Update a local installation
+
+Windows PowerShell:
+
+```powershell
+git -C "$HOME\.cursor\plugins\local\qualitypulse" pull
+```
+
+macOS or Linux:
+
+```bash
+git -C ~/.cursor/plugins/local/qualitypulse pull
+```
+
+Reload the Cursor window after updating.
+
+## Verify the installation
+
+1. Open **Customize** in Cursor.
+2. Confirm that `qualitypulse-qa-lead` appears under Plugins.
+3. Open **Skills** and confirm these skills appear:
+   - `requirement-risk-reviewer`
+   - `regression-impact-analyzer`
+   - `release-readiness-advisor`
+
+Skills can be selected automatically by the QualityPulse QA Lead or invoked directly with `/skill-name` in Agent chat.
+
+## Usage examples
+
+### Review a requirement before development
 
 ```text
-Use the QualityPulse QA Lead to review this Jira story before refinement.
+Use /requirement-risk-reviewer to review this story before refinement.
 
-Analyze the current Git diff and recommend a prioritized regression scope.
+As a customer, I can change the destination account for a scheduled recurring transfer. The change takes effect immediately.
 
-Based on these test results and open defects, is release 2.0 ready for production?
+Identify missing requirements and acceptance criteria. Score each material risk using impact multiplied by likelihood, and recommend test coverage based on the score.
 ```
+
+Expected output includes a readiness assessment, prioritized risk table, 1-to-25 risk scores, proposed clarifications, and risk-based test coverage.
+
+### Analyze regression impact from code changes
+
+```text
+Use /regression-impact-analyzer to analyze the current Git diff.
+
+Trace direct and downstream impact, score each material regression risk, recommend the smallest defensible regression scope, and explain which areas can be excluded.
+```
+
+Expected output includes changed behavior, impact paths supported by repository evidence, P0-to-P3 priorities, risk scores, recommended tests, exclusions, and unknowns.
+
+### Assess release readiness
+
+```text
+Use /release-readiness-advisor with this evidence:
+
+- 196 of 200 regression tests passed
+- Two failed tests affect payment processing
+- One release-blocking payment defect remains open
+- Security and performance testing passed
+- UAT was approved
+- Monitoring is ready
+- Rollback has not been tested
+
+Calculate the weighted readiness score out of 100 and recommend GO, CONDITIONAL GO, or NO-GO. Identify hard stops and the actions required to change the decision.
+```
+
+Expected output includes a weighted category scorecard, overall score, hard-stop evaluation, release recommendation, blockers, conditions, owners, and residual risk controls.
+
+### Let the QA Lead select the workflow
+
+```text
+Use the QualityPulse QA Lead to evaluate this ticket, the related code changes, and the current release evidence. Run the applicable workflows in SDLC order and provide one consolidated quality recommendation.
+```
+
+## Scoring models
+
+Requirement and regression risks use:
+
+```text
+Risk score = Impact × Likelihood
+```
+
+- 1 to 4: Low
+- 5 to 9: Medium
+- 10 to 16: High
+- 17 to 25: Critical
+
+Release-readiness candidates use these proposed thresholds unless an organization supplies approved thresholds:
+
+- 90 to 100: GO candidate
+- 75 to 89: CONDITIONAL GO candidate
+- Below 75: NO-GO candidate
+
+A confirmed blocker or failed mandatory gate overrides the numeric score.
 
 ## Design principles
 
@@ -27,18 +145,11 @@ Based on these test results and open defects, is release 2.0 ready for productio
 - Explicit assumptions and unknowns
 - Focused regression over reflexive full regression
 - No invented requirements, test results, approvals, or organizational thresholds
+- Scores supported by rationale rather than false precision
 
 ## Data and integrations
 
-Version 0.2.0 has no external services, credentials, telemetry, or MCP connections. It analyzes information supplied in chat and repository evidence Cursor is already authorized to access. It does not modify code unless the user separately requests implementation.
-
-## Local testing
-
-Load the repository as a local Cursor plugin, then try each example request against non-sensitive sample artifacts. Confirm that the requested skill activates, material claims cite available evidence, and missing inputs are labeled as unknown.
-
-## Installation
-
-Clone or download this repository, then load it as a local Cursor plugin. The package follows Cursor's plugin layout and can also be prepared for Marketplace submission from this repository.
+QualityPulse 0.3.0 has no external services, credentials, telemetry, or MCP connections. It analyzes information supplied in chat and repository evidence Cursor is already authorized to access. It does not modify code unless the user separately requests implementation.
 
 ## License
 
