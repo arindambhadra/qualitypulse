@@ -13,20 +13,21 @@ Review the supplied requirement before implementation. Proceed with explicit unk
 2. Extract explicit actors, triggers, preconditions, rules, states, inputs, outputs, integrations, permissions, and success conditions.
 3. Identify ambiguity, contradiction, missing behavior, untestable wording, and undefined terminology.
 4. Examine relevant happy, alternate, negative, boundary, state-transition, concurrency, retry, idempotency, time-zone, localization, accessibility, authorization, privacy, audit, data, performance, resilience, observability, migration, and compatibility risks. Exclude irrelevant dimensions.
-5. Prioritize findings:
-   - Critical: credible severe financial, legal, security, safety, or irreversible data harm.
-   - High: likely release blocker or major customer/business disruption.
-   - Medium: meaningful defect or operational friction with a viable workaround.
-   - Low: localized quality issue or clarification with limited impact.
-6. Draft acceptance criteria only for material gaps. Use Given/When/Then when it improves precision.
-7. Recommend the minimum effective test approach, data, and environment needs.
+5. Score each material risk using `Risk score = Impact × Likelihood`:
+   - Impact: 1 Negligible, 2 Minor, 3 Moderate, 4 Major, 5 Severe.
+   - Likelihood: 1 Rare, 2 Unlikely, 3 Possible, 4 Likely, 5 Almost certain.
+   - Risk bands: 1-4 Low, 5-9 Medium, 10-16 High, 17-25 Critical.
+   Explain the evidence behind each rating and label uncertain ratings provisional.
+6. Scale test coverage to risk: comprehensive critical-path, integration, negative, boundary, recovery, relevant non-functional, and monitoring coverage for Critical; broad functional and integration coverage for High; focused changed-path and dependency coverage for Medium; proportionate smoke or exploratory coverage for Low.
+7. Draft acceptance criteria only for material gaps. Use Given/When/Then when it improves precision.
+8. Recommend the minimum effective test approach, data, and environment needs.
 
 ## Output
 
 Lead with a risk level and Ready, Ready with Clarifications, or Not Ready for Development.
 
-| Priority | Gap or ambiguity | Why it matters | Proposed clarification or criterion | Evidence |
-|---|---|---|---|---|
+| Risk | Impact | Likelihood | Score | Gap or ambiguity | Proposed clarification or criterion | Evidence |
+|---|---:|---:|---:|---|---|---|
 
 Then provide the highest-value test strategy, assumptions used to proceed, and material questions with a recommended owner.
 
@@ -36,3 +37,4 @@ Then provide the highest-value test strategy, assumptions used to proceed, and m
 - Do not claim an unavailable linked artifact lacks information.
 - Do not invent expected results; label proposed behavior for Product confirmation.
 - Separate supplied facts, derived findings, assumptions, and unknowns.
+- Do not present a score without explaining its evidence and uncertainty.
