@@ -8,6 +8,8 @@ QualityPulse is a free, evidence-based Quality Engineering plugin for Cursor. It
 - **Regression Impact Analyzer**: traces credible change impact and recommends the smallest defensible regression scope.
 - **Release Readiness Advisor**: evaluates test, defect, coverage, UAT, operational, and non-functional evidence to recommend GO, CONDITIONAL GO, or NO-GO.
 
+Version 0.2.0 adds impact-by-likelihood risk scores, risk-based test-depth recommendations, and a weighted release-readiness score out of 100 with hard-stop gates.
+
 ## Example requests
 
 ```text
@@ -28,7 +30,7 @@ Based on these test results and open defects, is release 2.0 ready for productio
 
 ## Data and integrations
 
-Version 0.1.0 has no external services, credentials, telemetry, or MCP connections. It analyzes information supplied in chat and repository evidence Cursor is already authorized to access. It does not modify code unless the user separately requests implementation.
+Version 0.2.0 has no external services, credentials, telemetry, or MCP connections. It analyzes information supplied in chat and repository evidence Cursor is already authorized to access. It does not modify code unless the user separately requests implementation.
 
 ## Local testing
 
