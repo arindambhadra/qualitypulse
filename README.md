@@ -1,8 +1,18 @@
 # QualityPulse: AI Quality Engineering Lead
 
-Turn requirements, code changes, and release evidence into measurable quality decisions.
+Turn requirements, code changes, and release evidence into clear, measurable quality decisions.
 
-QualityPulse is a free Quality Engineering plugin for Cursor. It helps engineering and QA teams find requirement gaps, focus regression testing on credible impact, and make evidence-based release decisions. Every material risk is scored using impact multiplied by likelihood. Release assessments include a weighted readiness score out of 100 plus hard-stop gates that prevent critical blockers from being hidden by a high total.
+QualityPulse is an AI QA leadership toolkit for QA Managers, Quality Engineering Leads, Test Leads, and release decision-makers. It converts scattered delivery evidence into scored risks, focused test priorities, and defensible release recommendations. This helps leaders find expensive gaps earlier, direct limited testing effort toward the highest exposure, avoid unnecessary full regression, and communicate release risk consistently to Product, Engineering, and business stakeholders.
+
+Every material risk is scored using impact multiplied by likelihood. Release assessments include a weighted readiness score out of 100 plus hard-stop gates that prevent critical blockers from being hidden by a high total.
+
+## Leadership impact
+
+- **Earlier risk visibility**: expose ambiguous requirements and missing controls before they become production defects or rework.
+- **Smarter test investment**: increase coverage for high-risk areas and reduce effort on low-value regression.
+- **Consistent governance**: apply the same transparent scoring logic across stories, changes, and releases.
+- **Stronger release conversations**: replace subjective confidence with cited evidence, explicit unknowns, accountable conditions, and measurable readiness.
+- **Faster executive communication**: provide concise risk summaries and release recommendations backed by detailed analysis.
 
 ## Included capabilities
 
@@ -149,7 +159,7 @@ A confirmed blocker or failed mandatory gate overrides the numeric score.
 
 ## Data and integrations
 
-QualityPulse 0.3.0 has no external services, credentials, telemetry, or MCP connections. It analyzes information supplied in chat and repository evidence Cursor is already authorized to access. It does not modify code unless the user separately requests implementation.
+QualityPulse 1.0.0 has no external services, credentials, telemetry, or MCP connections. It analyzes information supplied in chat and repository evidence Cursor is already authorized to access. It does not modify code unless the user separately requests implementation.
 
 ## License
 
