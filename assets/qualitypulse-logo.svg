@@ -1,15 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
   <title id="title">QualityPulse</title>
-  <desc id="desc">Blue shield with a quality check and signal nodes</desc>
+  <desc id="desc">Quality leadership shield with a bright evidence pulse</desc>
   <defs>
-    <linearGradient id="g" x1="64" y1="48" x2="448" y2="464" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#2563EB"/>
-      <stop offset="1" stop-color="#0F766E"/>
+    <linearGradient id="background" x1="64" y1="48" x2="448" y2="464" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1F3A"/>
+      <stop offset="1" stop-color="#123B52"/>
+    </linearGradient>
+    <linearGradient id="shield" x1="126" y1="92" x2="390" y2="430" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4F8CFF"/>
+      <stop offset="0.52" stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#0D9488"/>
     </linearGradient>
   </defs>
-  <path fill="url(#g)" d="M256 24 440 92v132c0 119-72 218-184 264C144 442 72 343 72 224V92L256 24Z"/>
-  <path fill="none" stroke="#FFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="42" d="m151 258 67 67 145-153"/>
-  <circle cx="151" cy="154" r="18" fill="#BFDBFE"/>
-  <circle cx="256" cy="126" r="18" fill="#99F6E4"/>
-  <circle cx="361" cy="154" r="18" fill="#BFDBFE"/>
+
+  <rect x="24" y="24" width="464" height="464" rx="112" fill="url(#background)"/>
+  <path d="M256 78 400 130v112c0 93-55 170-144 207-89-37-144-114-144-207V130L256 78Z" fill="url(#shield)" stroke="#8FD9FF" stroke-width="8"/>
+  <path d="M137 266h68l28-70 49 133 42-91h51" fill="none" stroke="#FFFFFF" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="137" cy="266" r="13" fill="#A7F3D0"/>
+  <circle cx="375" cy="238" r="13" fill="#A7F3D0"/>
+  <path d="m215 365 27 27 58-62" fill="none" stroke="#D9FFF7" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
